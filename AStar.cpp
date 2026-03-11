@@ -16,54 +16,103 @@ Josh Thompson
 19/01/26
 */
 
-#include <iostream>		//cout, endl
-#include <cmath>
-#include "AStar.h"	//HelloWorld()
-#include <cstdlib>
-#include <ctime>
+#include "AStar.h"
 
-void AStar::PrintAStar()
+#include <queue>
+#include <cmath>
+#include <algorithm>
+
+struct Compare
 {
-    for (int i = 0; i < rows; i++)
+    bool operator()(Node* a, Node* b)
     {
-        for (int j = 0; j < cols; j++)
-        {
-            if (i == startY && j == startX)
-                std::cout << "S "; // Start
-            else if (i == endY && j == endX)
-                std::cout << "E "; // End
-            else if (grid[i][j] == 1)
-                std::cout << "# "; // Wall
-            else
-                std::cout << ". "; // Walkable
-        }
-        std::cout << std::endl;
+        return a->fCost > b->fCost;
     }
+};
+
+AStar::AStar(Grid& g, int sx, int sy, int ex, int ey)
+    : grid(g)
+{
+    startX = sx;
+    startY = sy;
+    endX = ex;
+    endY = ey;
 }
 
-AStar::AStar(int r, int c)
+float AStar::Heuristic(int x1, int y1, int x2, int y2)
 {
-    rows = r;
-    cols = c;
+    return std::abs(x1 - x2) + std::abs(y1 - y2);
+}
 
-    grid.resize(rows, std::vector<int>(cols, 0));
+std::vector<Node*> AStar::GetNeighbors(Node* node)
+{
+    std::vector<Node*> neighbors;
 
-    std::srand(std::time(nullptr));  // Seed once
-
-    for (int i = 0; i < rows; i++)
+    int directions[4][2] =
     {
-        for (int j = 0; j < cols; j++)
+        {1,0},
+        {-1,0},
+        {0,1},
+        {0,-1}
+    };
+
+    for (auto& d : directions)
+    {
+        int nx = node->x + d[0];
+        int ny = node->y + d[1];
+
+        if (grid.IsInside(nx, ny) && grid.IsWalkable(nx, ny))
         {
-            grid[i][j] = std::rand() % 5;  // 20% of the entire grid is a wall. The other 80% is walkable.
+            neighbors.push_back(new Node(nx, ny));
         }
     }
 
-    startX = 3;
-    startY = 1;
+    return neighbors;
+}
 
-    endX = 7;
-    endY = 8;
+std::vector<Node*> AStar::FindPath()
+{
+    std::priority_queue<Node*, std::vector<Node*>, Compare> openList;
 
-    grid[startX][startY] = 0; // Ensure start is walkable
-    grid[endX][endY] = 0; // Ensure end is walkable
+    Node* start = new Node(startX, startY);
+    Node* goal = new Node(endX, endY);
+
+    openList.push(start);
+
+    while (!openList.empty())
+    {
+        Node* current = openList.top();
+        openList.pop();
+
+        if (current->x == goal->x && current->y == goal->y)
+        {
+            std::vector<Node*> path;
+
+            while (current != nullptr)
+            {
+                path.push_back(current);
+                current = current->parent;
+            }
+
+            std::reverse(path.begin(), path.end());
+
+            return path;
+        }
+
+        auto neighbors = GetNeighbors(current);
+
+        for (Node* n : neighbors)
+        {
+            n->gCost = current->gCost + 1;
+            n->hCost = Heuristic(n->x, n->y, goal->x, goal->y);
+
+            n->CalculateFCost();
+
+            n->parent = current;
+
+            openList.push(n);
+        }
+    }
+
+    return {};
 }

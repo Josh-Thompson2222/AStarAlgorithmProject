@@ -13,37 +13,31 @@
 
 
 Josh Thompson
-19/01/26
+04/02/26
 */
 
-#include <iostream>
-
-#include "Grid.h"
-#include "AStar.h"
-
-int main()
+struct Node
 {
-    Grid grid(10, 10);
+    int x, y;
 
-    int startX = 1;
-    int startY = 1;
+    float gCost; // cost from start
+    float hCost; // heuristic cost
+    float fCost; // total cost
 
-    int endX = 8;
-    int endY = 8;
+    Node* parent;
 
-    AStar astar(grid, startX, startY, endX, endY);
-
-    auto path = astar.FindPath();
-
-    if (path.empty())
+    Node(int xPos, int yPos)
     {
-        std::cout << "No path found\n";
-        return 0;
+        x = xPos;
+        y = yPos;
+        gCost = 0;
+        hCost = 0;
+        fCost = 0;
+        parent = nullptr;
     }
 
-    std::cout << "\nGrid With Path:\n\n";
-
-    grid.PrintWithPath(startX, startY, endX, endY, path);
-
-    return 0;
-}
+    void CalculateFCost()
+    {
+        fCost = gCost + hCost;
+    }
+};

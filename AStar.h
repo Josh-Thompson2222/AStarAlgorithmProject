@@ -17,19 +17,29 @@ Josh Thompson
 */
 
 
+#pragma once
 
-#include <iostream>		//cout, endl
+#include "Grid.h"
+#include "Node.h"
+
 #include <vector>
 
 class AStar
 {
 private:
-	std::vector<std::vector<int>> grid;
-	int rows, cols;
-	int startX, startY;
-	int endX, endY;
+
+    Grid& grid;
+
+    int startX, startY;
+    int endX, endY;
+
+    float Heuristic(int x1, int y1, int x2, int y2);
+
+    std::vector<Node*> GetNeighbors(Node* node);
 
 public:
-	AStar(int r, int c);
-	void PrintAStar();
+
+    AStar(Grid& g, int sx, int sy, int ex, int ey);
+
+    std::vector<Node*> FindPath();
 };

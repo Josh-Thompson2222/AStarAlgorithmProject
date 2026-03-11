@@ -11,39 +11,42 @@
 ⣿⣿⣷⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣴⣶⣶⣶⣄⡀⠄⠈⠑⢙⣡⣴⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 
-
 Josh Thompson
-19/01/26
+04/02/26
 */
 
-#include <iostream>
+#pragma once
+#include <vector>
 
-#include "Grid.h"
-#include "AStar.h"
+class Node;
 
-int main()
+class Grid
 {
-    Grid grid(10, 10);
+private:
+    int rows;
+    int cols;
 
-    int startX = 1;
-    int startY = 1;
+    std::vector<std::vector<int>> grid;
 
-    int endX = 8;
-    int endY = 8;
+public:
 
-    AStar astar(grid, startX, startY, endX, endY);
+    Grid(int r, int c);
 
-    auto path = astar.FindPath();
+    bool IsWalkable(int x, int y) const;
+    bool IsInside(int x, int y) const;
 
-    if (path.empty())
-    {
-        std::cout << "No path found\n";
-        return 0;
-    }
+    int GetRows() const;
+    int GetCols() const;
 
-    std::cout << "\nGrid With Path:\n\n";
+    const std::vector<std::vector<int>>& GetGrid() const;
 
-    grid.PrintWithPath(startX, startY, endX, endY, path);
+    void Print(int startX, int startY, int endX, int endY) const;
 
-    return 0;
-}
+    void PrintWithPath(
+        int startX,
+        int startY,
+        int endX,
+        int endY,
+        const std::vector<Node*>& path
+    ) const;
+};
