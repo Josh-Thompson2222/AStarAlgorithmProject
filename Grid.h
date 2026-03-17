@@ -42,6 +42,9 @@ public:
 
     void Print(int startX, int startY, int endX, int endY) const;
 
+    void ClearObstacles();
+    void SetWalkable(int x, int y, bool isWalkable);
+
     void PrintWithPath(
         int startX,
         int startY,

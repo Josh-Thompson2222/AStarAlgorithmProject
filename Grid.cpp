@@ -110,3 +110,16 @@ void Grid::PrintWithPath(
         std::cout << std::endl;
     }
 }
+
+void Grid::ClearObstacles()
+{
+    for (int y = 0; y < rows; y++)
+        for (int x = 0; x < cols; x++)
+            grid[y][x] = 0;
+}
+
+void Grid::SetWalkable(int x, int y, bool isWalkable)
+{
+    if (IsInside(x, y))
+        grid[y][x] = isWalkable ? 0 : 1;
+}

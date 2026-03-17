@@ -26,7 +26,31 @@ struct Node
 
     Node* parent;
 
-    Node(int xPos, int yPos)
+    // State tracking to prevent duplicates and revisiting
+    bool isClosed;
+    bool isOpen;
+
+    Node() : 
+        x(0), 
+        y(0), 
+        gCost(0), 
+        hCost(0), 
+        fCost(0), 
+        parent(nullptr), 
+        isClosed(false), 
+        isOpen(false) {}
+
+    Node(int xPos, int yPos) : 
+        x(xPos), 
+        y(yPos), 
+        gCost(0), 
+        hCost(0), 
+        fCost(0), 
+        parent(nullptr), 
+        isClosed(false), 
+        isOpen(false) {}
+
+    /*Node(int xPos, int yPos)
     {
         x = xPos;
         y = yPos;
@@ -34,7 +58,7 @@ struct Node
         hCost = 0;
         fCost = 0;
         parent = nullptr;
-    }
+    }*/
 
     void CalculateFCost()
     {
