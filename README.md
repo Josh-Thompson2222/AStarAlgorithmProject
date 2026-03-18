@@ -1,5 +1,3 @@
-//Look for parent where it is made
-
 # C++ A* Pathfinding Project
 Author: Josh Thompson
 
