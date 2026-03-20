@@ -10,7 +10,7 @@ Lecturer: Michelle Lynch
 Academic Year: 2025-2026
 
 ## Overview
- 
+ My project is a modern implementation of the C++ A* Pathfinding algorithm built in Visual Studio 2022, to represent a programmer. The aim of the project is to search for the shortest path from a starting node to an end node on a 2D
 ## Features
  
 ## Demo
