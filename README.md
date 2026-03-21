@@ -61,10 +61,18 @@ How it works:
 The implementation supports both:
 - Manhattan distance for non-diagonal movement
 - Euclidean distance for diagonal movement
-While Manhattan distance measures measures movement along a grid (like a taxi navigating streets), Euclidean distance represents the direct, straight-line distance between two points (like a crow flying from start to end).
+While Manhattan distance measures measures movement along a grid (like a taxi navigating streets), Euclidean distance represents the direct, straight-line distance between two points (like a bird flying from start to end). In general, Euclidean distance is always less than or equal to Manhattan distance, because it takes the shortest possible path rather than following the axes of the grid.
+Movement cost is '1.0' for straight moves and '1.414' for diagonal moves.
 
 ## File Structure
- 
+ I am using six files, each with separate responsibilities assigned to grid creation and management, node state, and pathfinding logic.
+
+ <img width="266" height="302" alt="image" src="https://github.com/user-attachments/assets/c2f7966e-b51a-438b-ac92-8f31c99b9194" />
+
+- Grid.h and Grid.cpp: These files manage the 2D map environment. It tracks the size of the board, handles adding/clearing obstacles, checks boundary limits, and prints the visual representation of the grid and the path. Sets the start, end, walkable and unwalkable X and Y coordinates.
+
+- Node.h: 
+
 ## Setup and Run
  
 ## Sample Maps
