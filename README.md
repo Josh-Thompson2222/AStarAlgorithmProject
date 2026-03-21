@@ -13,7 +13,7 @@ Academic Year: 2025-2026
  My project is a modern implementation of the C++ (C++ 11 or later),  A* Pathfinding algorithm built in Visual Studio 2022, to represent a programmer. The aim of the project is to search for the shortest path from a starting node to an end node on a 2D grid while avoiding blocked cells which I portray with a different symbol than the walkable path or path chosen. The solution was built using an object-oriented and modular design, which aligns with the project requirements to use modern C++, STL, containers and reusable components.
  My project supports both Manhattan and Euclidean heuristics, so it can run with or without diagonal movements. I have included multiple test cases to validate the algorithm under normal conditions and edge cases such as unreachable goals and identical start/end positions. 
 ## Features
- - A* pathfinding on a 2D grid
+ - A* pathfinding on a 10x10 cell, 2D grid
  - Obstacles and blocked cells
  - Manhattan and Euclidean heuristic
  - Diagonal movement (with the Euclidean heuristic)
@@ -21,6 +21,14 @@ Academic Year: 2025-2026
  - Prints the final path directlt in the console
  - Includes test scenarios for Manhattan heuristic, Euclidean heuristic, no path found and when the start point and the end point are the same node
 ## Demo
+ The grid display uses:
+ - 'S' to show the starting node - where the path starts
+ - 'E' displays the end node - where the path ends
+ - '*' for the chosen, discovered path
+ - '.' shows the walkable, empty cells
+ - 'O' cells are walls or obstacles, which makes these cells unwalkable
+ Initially I had decided to use '#' to display the obstacles, however after running the code a few times and looking at the output on the console, I found it a bit hard on the eyes to distinguish very clearly between the chosen path, obstacles and walkable cells. This gave me the idea to use 'O' to display obstacles instead as they are easily distinguishable from the others at a quick glance. 
+    
  <img width="538" height="770" alt="image" src="https://github.com/user-attachments/assets/b8e99479-cbb5-4a7a-ac81-1114cb48cbcb" />
 
 ## How It Works
