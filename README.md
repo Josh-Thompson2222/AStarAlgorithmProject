@@ -38,6 +38,7 @@ I made the adjustment from the previous output to this one, as I feel this outpu
 
 ## How It Works
  I have used a priority queue as the open list, with nodes ordered by their 'fCost'. If two nodes have the same 'fCost', then the implementation uses a tie-breaker that prefers whichever node has the lower 'hCost'. This biases the search slightly closer to the goal. 
+ 
  <img width="262" height="61" alt="image" src="https://github.com/user-attachments/assets/85664ead-ab0e-4050-a4c1-0d2a7ee659dd" />
 
  <img width="902" height="230" alt="image" src="https://github.com/user-attachments/assets/f75ba648-b055-4c0c-bd14-96925ee05da7" />
