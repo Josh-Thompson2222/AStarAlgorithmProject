@@ -27,8 +27,12 @@ Academic Year: 2025-2026
  - '*' for the chosen, discovered path
  - '.' shows the walkable, empty cells
  - 'O' cells are walls or obstacles, which makes these cells unwalkable
+ 
  Initially I had decided to use '#' to display the obstacles, however after running the code a few times and looking at the output on the console, I found it a bit hard on the eyes to distinguish very clearly between the chosen path, obstacles and walkable cells. This gave me the idea to use 'O' to display obstacles instead as they are easily distinguishable from the others at a quick glance. 
-    
+ 
+ <img width="693" height="625" alt="image" src="https://github.com/user-attachments/assets/2818327a-7475-469a-b704-097b11fecc23" />
+
+
  <img width="538" height="770" alt="image" src="https://github.com/user-attachments/assets/b8e99479-cbb5-4a7a-ac81-1114cb48cbcb" />
 
 ## How It Works
