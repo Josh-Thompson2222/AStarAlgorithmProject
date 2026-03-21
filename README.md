@@ -44,11 +44,24 @@ I made the adjustment from the previous output to this one, as I feel this outpu
  <img width="902" height="230" alt="image" src="https://github.com/user-attachments/assets/f75ba648-b055-4c0c-bd14-96925ee05da7" />
 
 Each node stores:
-- It's grid position
+- It's grid position, which is stored as an integer
+- A parent pointer to a null value when the path is first created and can be used later in the code for path reconstruction
 - 'gCost'
 - 'fCost'
 - 'hCost'
-- A parent pointer
+
+How it works:
+1. Add the starting node to the open list.
+2. Repeatedly remove the node with the lowest 'fCost'.
+3. If that node is the goal, reconstruct the path by following parent pointers backwards.
+4. Otherwise, inspect all valid neighbours.
+5. Update neighbour costs when a shorter path is found.
+6. Continue this process until the goal is found or the open list is empty
+
+The implementation supports both:
+- Manhattan distance for non-diagonal movement
+- Euclidean distance for diagonal movement
+While Manhattan distance measures measures movement along a grid (like a taxi navigating streets), Euclidean distance represents the direct, straight-line distance between two points (like a crow flying from start to end).
 
 ## File Structure
  
