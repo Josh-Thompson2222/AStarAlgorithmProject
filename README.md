@@ -137,6 +137,12 @@ Movement cost is '1.0' for straight moves and '1.414' for diagonal moves.
 
  <img width="403" height="77" alt="image" src="https://github.com/user-attachments/assets/18e4cea1-a811-47cd-bedb-0e8e0eff7f38" />
 
+ Test 4: Start equals goal
+
+ The algorithm handles the edge case where the start node and end node are the same location. 
+
+ <img width="437" height="306" alt="image" src="https://github.com/user-attachments/assets/c999948c-0c8f-4170-b9dd-450949831070" />
+
 ## Lessons Learned
  
 ## Future Improvements
