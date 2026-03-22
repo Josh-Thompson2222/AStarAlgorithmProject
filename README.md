@@ -82,22 +82,47 @@ Movement cost is '1.0' for straight moves and '1.414' for diagonal moves.
 - Modern C++ (C++ 11 or later)
 
 - Download & Installation
- Download the zipped project folder submission. "Extract all" to your downloads folder. Open Visual Studio 2022 and on the right-hand side, click "Open a project or solution". Navigate to the solution file inside the project folder and open this solution. 
-
-- Clean Solution
- Once the solution is open, hover over the "Build" menu on the navigation bar at the top and click on "clean solution". 
-
-- Build Solution
- Once the solution has been cleaned, hover over the "Build" menu again and click "Build Solution". 
-
-- Debugging/Running solution
- When the solution has finished building, click the play button outlined in green at the top to start without debugging.
   
+  Download the zipped project folder submission. "Extract all" to your downloads folder. Open Visual Studio 2022 and on the right-hand side, click "Open a project or solution". Navigate to the solution file inside the project folder and open this solution. 
+
+- Clean Solution:
+
+  Once the solution is open, hover over the "Build" menu on the navigation bar at the top and click on "clean solution". 
+  <img width="1918" height="1018" alt="image" src="https://github.com/user-attachments/assets/609bd507-866f-43fa-925f-a0cf948821bd" />
+
+- Build Solution:
+
+  Once the solution has been cleaned, hover over the "Build" menu again and click "Build Solution". 
+  <img width="1913" height="1020" alt="image" src="https://github.com/user-attachments/assets/5a2db8f5-aa73-41e1-826c-c9e3d07d71cf" />
+
+- Debugging/Running solution:
+
+  When the solution has finished building, click the play button outlined in green at the top to start without debugging.
+  <img width="1917" height="1022" alt="image" src="https://github.com/user-attachments/assets/ead8d418-6c45-46a6-bfcf-bafcc24a6dbc" />
+
  
 ## Sample Maps
+ I have chosen to use a 10x10 grid in this test programme. I chose this size as I started wih a 6x6 grid size and thought it was too small to really demonstrate the capability of the algorithm. A 10x10 grid gives the algorithm more room to show how well it works.
+
+ I am placing obstacles manually in the main.cpp file instead of how I was previously doing randomly generated walls as I feel it can give me more control over the test environments.
+
+ Test environments are as follows:
  
+ - A standard obstacle layout (Manhattan)
+ - A denser map with diagonal movement allowed (Euclidean)
+ - A blocked goal
+ - A case where start equals goal
+
 ## Results
- 
+
+ Test 1: Normal path with obstacles (Manhattan heuristic)
+
+ Uses Manhattan heuristic and no diagonal movement. The algorithm successfully routes around walls to find a valid path.
+
+ <img width="693" height="302" alt="image" src="https://github.com/user-attachments/assets/af257d71-16fa-4eee-a5e6-18a689494425" />
+
+ From this image we can see that the algorithm explored 33 possible nodes to find the shortest path. The shortest path found was 19 steps from start to end. That means that the path chsen was the one with the lowest fCost, and if this was equal to another path's fCost, then their hCost was compared to find the lowest.
+
 ## Lessons Learned
  
 ## Future Improvements
