@@ -123,6 +123,20 @@ Movement cost is '1.0' for straight moves and '1.414' for diagonal moves.
 
  From this image we can see that the algorithm explored 33 possible nodes to find the shortest path. The shortest path found was 19 steps from start to end. That means that the path chsen was the one with the lowest fCost, and if this was equal to another path's fCost, then their hCost was compared to find the lowest.
 
+ Test 2: Dense obstacles with diagonal movement (Euclidean heuristic)
+
+ This test case uses Euclidean distance nd diagonal movements are allowed to find the shortest path from start to finsh. This shows that the algorithm can still find a path efficiently in a more constrained environment with such dense obstacles.
+
+ <img width="595" height="302" alt="image" src="https://github.com/user-attachments/assets/36ff3f9a-9267-4f49-9add-04c1083dcd06" />
+
+ The image shows how a path was discovered using only 9 steps. As Euclidean heuristic uses less than half the total steps the Manhattan heuristic does. I think this reinforces our prior knowledge, that the Eucliden method is more efficient when the two are compared. The fCost of diagonal movement is 1.414 for diagonal movements and only     1.0 for straight line movements, the final cost of the Euclidean mathod is 10.484 ((1.414 x 6) + 2), and the final cost of the Manhattan method is 18 (18 x 1.0).
+
+ Test 3: Unreachable goal
+
+ In this scenario, the goal is completely surrounded by obstacles. This demonstrates that the algorithm correctly reports that no path exists. This is an important validation case, as it shows us that the algorithm is not making false predictions on where paths can be made. It has searched 91 nodes and found no possible way from start to    end.
+
+ <img width="403" height="77" alt="image" src="https://github.com/user-attachments/assets/18e4cea1-a811-47cd-bedb-0e8e0eff7f38" />
+
 ## Lessons Learned
  
 ## Future Improvements
