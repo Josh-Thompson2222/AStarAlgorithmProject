@@ -78,6 +78,21 @@ Movement cost is '1.0' for straight moves and '1.414' for diagonal moves.
 - main.cpp: This is the execution entry point. It creates the grid and runs a series of different test scenarios. The first test uses only the Manhattan Heuristic method. This moves only in straight lines either up, down, left or right, 1 step at a time. The second test method uses the Euclidean heuristic which can move diagonally to find a shorter path from start to end, however the cost of each movement is slightly higher. Both of these tests include obstacles, the location of each is set out inside the main function using "grid.SetWalkable(2, 3, false);". The third test case does not have a possible path. It explores all possible nodes until it realises it cannot find a path when it then outputs "No path found" to the console. Final test case experiments with the start and end node being equal to one another. This case only explores one node.
 
 ## Setup and Run
+- Visual Studio 2022
+- Modern C++ (C++ 11 or later)
+
+- Download & Installation
+ Download the zipped project folder submission. "Extract all" to your downloads folder. Open Visual Studio 2022 and on the right-hand side, click "Open a project or solution". Navigate to the solution file inside the project folder and open this solution. 
+
+- Clean Solution
+ Once the solution is open, hover over the "Build" menu on the navigation bar at the top and click on "clean solution". 
+
+- Build Solution
+ Once the solution has been cleaned, hover over the "Build" menu again and click "Build Solution". 
+
+- Debugging/Running solution
+ When the solution has finished building, click the play button outlined in green at the top to start without debugging.
+  
  
 ## Sample Maps
  
