@@ -162,5 +162,9 @@ Movement cost is '1.0' for straight moves and '1.414' for diagonal moves.
    AStar - algorithm logic
 
    Main - execution/testing
-   
+
+ - Why edge-case testing is necessary. This is important as it allows me to ensure the algorithm handles the failure conditions correctly. In my tests, I included a situation where navigating a path from start to finish was not possible. This method explored 91 nodes    and proved that the algorithm will not run indefinitely or crash due to invalid access.
+
+ - Understanding why it's so important to add human input to AI code in modern times. AI code can often be a great tool for engineers, but it does not completely replace us. From working on this project I have seen first-hand how useful AI code can be, but it also       makes quite a few mistakes which need to be fixed/edited by the engineer in control. One example from my code would be when AI autocompleted the creation of my grid, it made the obstacles using the '#' symbol. Reading this on a graph from a human perspective, this was  difficult to differentiate at a quick glance from the walkable path '.' and the path chosen '*'. All of these symbols blended together very much making it hard to tell where the actual path went, so I changed the wall symbol from '#' to 'O'.
+     
 ## Future Improvements
