@@ -168,3 +168,15 @@ Movement cost is '1.0' for straight moves and '1.414' for diagonal moves.
  - Understanding why it's so important to add human input to AI code in modern times. AI code can often be a great tool for engineers, but it does not completely replace us. From working on this project I have seen first-hand how useful AI code can be, but it also       makes quite a few mistakes which need to be fixed/edited by the engineer in control. One example from my code would be when AI autocompleted the creation of my grid, it made the obstacles using the '#' symbol. Reading this on a graph from a human perspective, this was  difficult to differentiate at a quick glance from the walkable path '.' and the path chosen '*'. All of these symbols blended together very much making it hard to tell where the actual path went, so I changed the wall symbol from '#' to 'O'.
      
 ## Future Improvements
+ - I think it would be interesting to prevent diagonal corner-cutting through walls. In this case the algorithm would have to move directly down, then across to the right to avoid cutting these corners. However, it would mean the path would be longer.
+
+   <img width="590" height="275" alt="image" src="https://github.com/user-attachments/assets/ad6c2793-a12b-433e-8dd5-028b06bec96b" />
+
+- I would like to implement a user input for the grid size, start and end nodes, and possibly the percentage of the map which is covered in obstacles.
+
+- One of my classmates had weighted terrain costs which I really like. Different positions on the grid have different costs for the path navigating through some of them nodes. A shorter path may not necessarily mean a lower cost at the end as the shorter path found may navigate across some high costing nodes.
+
+- From looking at other people's projects I believe I could have spent more time working on the visual output. I could have included more colour definitely but also possibly increase the grid size and just make it overall more visually appealing.
+
+## References
+ - 
