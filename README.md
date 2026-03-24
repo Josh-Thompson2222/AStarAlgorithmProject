@@ -179,4 +179,7 @@ Movement cost is '1.0' for straight moves and '1.414' for diagonal moves.
 - From looking at other people's projects I believe I could have spent more time working on the visual output. I could have included more colour definitely but also possibly increase the grid size and just make it overall more visually appealing.
 
 ## References
- - 
+ - https://www.geeksforgeeks.org/dsa/a-search-algorithm/
+ - https://www.youtube.com/watch?v=i0x5fj4PqP4
+ - https://www.youtube.com/watch?v=ySN5Wnu88nE
+ - GitHub Copilot
