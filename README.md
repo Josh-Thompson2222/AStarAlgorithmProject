@@ -129,7 +129,7 @@ Movement cost is '1.0' for straight moves and '1.414' for diagonal moves.
 
  <img width="595" height="302" alt="image" src="https://github.com/user-attachments/assets/36ff3f9a-9267-4f49-9add-04c1083dcd06" />
 
- The image shows how a path was discovered using only 9 steps. As Euclidean heuristic uses less than half the total steps the Manhattan heuristic does. I think this reinforces our prior knowledge, that the Eucliden method is more efficient when the two are compared. The fCost of diagonal movement is 1.414 for diagonal movements and only     1.0 for straight line movements, the final cost of the Euclidean mathod is 10.484 ((1.414 x 6) + 2), and the final cost of the Manhattan method is 18 (18 x 1.0).
+ The image shows how a path was discovered using only 9 steps. As Euclidean heuristic uses less than half the total steps the Manhattan heuristic does. I think this reinforces our prior knowledge, that the Eucliden method is more efficient when the two are compared. The fCost of diagonal movement is 1.414 for diagonal movements and only 1.0 for straight line movements, the final cost of the Euclidean mathod is 10.484 ((1.414 x 6) + 2), and the final cost of the Manhattan method is 18 (18 x 1.0).
 
  Test 3: Unreachable goal
 
@@ -144,5 +144,21 @@ Movement cost is '1.0' for straight moves and '1.414' for diagonal moves.
  <img width="437" height="306" alt="image" src="https://github.com/user-attachments/assets/c999948c-0c8f-4170-b9dd-450949831070" />
 
 ## Lessons Learned
- 
+ I feel that this project really helped me to both learn new, important C++ algorithm design concepts, while also reinforcing my existing knowledge of the Object Oriented design I was taught in class.
+
+ Skills developed:
+
+ - How the A* Algorithm uses gCost, fCost and hCost to guide search.
+ - How heuristic choice affects behaviour and efficiency. For example, using the Euclidean heuristic may find a shorter path from start to end than the Manhattan heuristic but if the path contains a lare amount of diagonal movements, the total cost of the shorter        Euclidean path may be higher than the cost of the Manhattan path which only moves up-down-left-right.
+ - STL containers such as std::vector and std::priority_queue can support graph search.
+ - Modular design improves readability and maintainability. My project is divided into 4 sections making it easy to follow:
+
+   Node - data structure
+
+   Grid - environment representation
+
+   AStar - algorithm logic
+
+   Main - execution/testing
+   
 ## Future Improvements
