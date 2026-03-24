@@ -182,4 +182,5 @@ Movement cost is '1.0' for straight moves and '1.414' for diagonal moves.
  - https://www.geeksforgeeks.org/dsa/a-search-algorithm/
  - https://www.youtube.com/watch?v=i0x5fj4PqP4
  - https://www.youtube.com/watch?v=ySN5Wnu88nE
+ - https://www.datacamp.com/tutorial/a-star-algorithm
  - GitHub Copilot
