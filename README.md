@@ -151,7 +151,9 @@ Movement cost is '1.0' for straight moves and '1.414' for diagonal moves.
  - How the A* Algorithm uses gCost, fCost and hCost to guide search.
  - How heuristic choice affects behaviour and efficiency. For example, using the Euclidean heuristic may find a shorter path from start to end than the Manhattan heuristic but if the path contains a lare amount of diagonal movements, the total cost of the shorter        Euclidean path may be higher than the cost of the Manhattan path which only moves up-down-left-right.
  - STL containers such as std::vector and std::priority_queue can support graph search.
- - Modular design improves readability and maintainability. My project is divided into 4 sections making it easy to follow:
+ - Modular design improves readability and maintainability as each file has a single responsibility, so you don't need to understand the entire project at once. I have found this design a great help to me when debugging issues as it is easily navigable to find where a   problem has occurred and where the root cause is from there.
+ 
+   My project is divided into 4 sections making it easy to follow:
 
    Node - data structure
 
